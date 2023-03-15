@@ -51,6 +51,13 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         len: [8, 30]
       }
+    },
+    activityLevel: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1, 20]
+      }
     }
   }, {
     sequelize,

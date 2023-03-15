@@ -31,6 +31,10 @@ module.exports = {
       password: {
         type: Sequelize.STRING(30)
       },
+      activityLevel: {
+        type: Sequelize.STRING(20),
+        allowNull: false
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

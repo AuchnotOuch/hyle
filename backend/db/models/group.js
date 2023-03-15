@@ -21,7 +21,13 @@ module.exports = (sequelize, DataTypes) => {
         len: [1, 60]
       }
     },
-    activityLevel: DataTypes.STRING
+    activityLevel: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1, 20]
+      }
+    },
   }, {
     sequelize,
     modelName: 'Group',
