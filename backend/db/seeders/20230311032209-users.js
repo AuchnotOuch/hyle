@@ -16,8 +16,10 @@ module.exports = {
      * }], {});
     */
     const hashedPassword = await bcrypt.hash('password123', 10);
+    const activityLevels = ["inactive", "low", "medium", "high"]
 
-    // Generate 100 families of varying sizes
+
+    // Generate 20 families of varying sizes
     const users = [];
     for (let i = 0; i < 20; i++) {
       const familyLastName = faker.name.lastName();
@@ -30,6 +32,7 @@ module.exports = {
         const displayName = `${firstName} ${familyLastName}`;
         const email = `${userName}@example.com`; // Generate unique email
         const password = hashedPassword;
+        const activityLevel = activityLevels[Math.floor(Math.random() * activityLevels.length)]
 
         users.push({
           firstName,
@@ -37,7 +40,8 @@ module.exports = {
           userName,
           displayName,
           email,
-          password
+          password,
+          activityLevel
         });
       }
     }
