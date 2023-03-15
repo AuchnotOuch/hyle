@@ -23,6 +23,12 @@ module.exports = (sequelize, DataTypes) => {
           foreignKey: 'ownerId'
         }
       )
+      User.hasMany(
+        models.Institution,
+        {
+          foreignKey: 'ownerId'
+        }
+      )
     }
   }
   User.init({
