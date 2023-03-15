@@ -17,6 +17,7 @@ module.exports = {
     */
     const hashedPassword = await bcrypt.hash('password123', 10);
     const activityLevels = ["inactive", "low", "medium", "high"]
+    const verifiedUser = [true, false]
 
 
     // Generate 20 families of varying sizes
@@ -33,6 +34,7 @@ module.exports = {
         const email = `${userName}@example.com`; // Generate unique email
         const password = hashedPassword;
         const activityLevel = activityLevels[Math.floor(Math.random() * activityLevels.length)]
+        const verified = verifiedUser[Math.floor(Math.random() * verifiedUser.length)]
 
         users.push({
           firstName,
@@ -41,7 +43,8 @@ module.exports = {
           displayName,
           email,
           password,
-          activityLevel
+          activityLevel,
+          verified
         });
       }
     }

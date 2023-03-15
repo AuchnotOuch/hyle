@@ -17,6 +17,12 @@ module.exports = (sequelize, DataTypes) => {
           foreignKey: 'ownerId'
         }
       )
+      User.hasMany(
+        models.Community,
+        {
+          foreignKey: 'ownerId'
+        }
+      )
     }
   }
   User.init({
@@ -57,6 +63,10 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         len: [8, 30]
       }
+    },
+    verified: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
     },
     activityLevel: {
       type: DataTypes.STRING,
