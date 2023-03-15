@@ -19,9 +19,10 @@ module.exports = {
 
     // Generate 100 families of varying sizes
     const users = [];
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 20; i++) {
       const familyLastName = faker.name.lastName();
-      const familySize = Math.floor(Math.random() * 30) + 1; // Random family size between 1 and 30
+      // const familySize = Math.floor(Math.random() * 30) + 1; // Random family size between 1 and 30
+      const familySize = 5;
 
       for (let j = 1; j <= familySize; j++) {
         const firstName = faker.name.firstName();
@@ -36,9 +37,7 @@ module.exports = {
           userName,
           displayName,
           email,
-          password,
-          createdAt: new Date(),
-          updatedAt: new Date()
+          password
         });
       }
     }
