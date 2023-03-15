@@ -38,6 +38,13 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: { model: 'Users' }
+    },
+    type: {
+      type: DataTypes.STRING,
+      validate: {
+        len: [1, 60]
+      },
+      allowNull: false
     }
   }, {
     sequelize,

@@ -21,6 +21,10 @@ module.exports = {
         type: Sequelize.STRING(60),
         allowNull: false
       },
+      type: {
+        type: Sequelize.STRING(60),
+        allowNull: false
+      },
       activityLevel: {
         type: Sequelize.STRING(20),
         allowNull: false
